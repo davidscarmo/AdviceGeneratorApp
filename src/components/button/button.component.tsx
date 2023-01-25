@@ -11,6 +11,7 @@ export const Button: React.FC<ButtonPropsInterface> = ({
       className={styles.container}
       disabled={loading}
       onClick={handleGenerateHandleAdvice}
+      aria-label={`Generate New Advice`}
     >
       <img src={iconDice} alt="" />
     </button>

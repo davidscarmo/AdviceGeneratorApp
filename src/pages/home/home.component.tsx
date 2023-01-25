@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Card } from "../../components/card/card.component;";
 import { getAdviceData } from "../../services/advices/advices.service";
 import { AdviceDataInterface } from "./home.interface";
 import styles from "./home.module.scss";
 const Home = () => {
+  const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const [adviceData, setAdviceData] = useState<AdviceDataInterface | null>(
     null
   );
@@ -13,11 +14,11 @@ const Home = () => {
     try {
       setLoading(true);
       const advice = await getAdviceData();
-      if (advice.slip) setTimeout(() =>setAdviceData(advice), 1000);
+      if (advice.slip) setTimeout(() => setAdviceData(advice), 1000);
     } catch (err) {
       setAdviceData(null);
     } finally {
-      setTimeout(() => setLoading(false), 1000)
+      setTimeout(() => setLoading(false), 1000);
     }
   };
 
@@ -28,14 +29,20 @@ const Home = () => {
     getRandomAdvice();
   }, []);
 
+  useEffect(() => {
+    if (paragraphRef && paragraphRef.current) {
+      paragraphRef.current.focus();
+    }
+  }, []);
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Card
         advice={adviceData}
         handleGenerateHandleAdvice={handleGenerateHandleAdvice}
         loading={loading}
+        paragraphRef={paragraphRef}
       />
-    </div>
+    </main>
   );
 };
 

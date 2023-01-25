@@ -6,12 +6,13 @@ export const Card: React.FC<CardPropsInterface> = ({
   advice,
   handleGenerateHandleAdvice,
   loading,
+  paragraphRef,
 }) => {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>ADVICE #{advice?.slip?.id}</h1>
 
-      <p className={styles.content}>
+      <p className={styles.content} ref={paragraphRef} tabIndex={0}>
         {advice?.slip.advice ?? "Generating Advice..."}
       </p>
 
