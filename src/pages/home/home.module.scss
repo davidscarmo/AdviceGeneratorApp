@@ -1,0 +1,13 @@
+@import "../../styles/variables";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  padding: 0 1rem;
+  min-height: 100vh;
+
+  background-color: $neutral-dark-blue;
+}
