@@ -26,12 +26,12 @@ Users should be able to:
 
 <figure>
   <img src="./readme/screenshot_1.png" alt="Generating advice... - Screenshot 1">
-  <figcaption style="text-align:center">Loading advice - Screenshot 1</figcaption>
+  <figcaption style="text-align:center;">Loading advice - Screenshot 1</figcaption>
 </figure>
 
 <figure>
   <img src="./readme/screenshot_2.png" alt="Advice: Respect other people's opinions, even when they differ from your own - Screenshot 2">
-  <figcaption style="text-align:center">Advice - Screenshot 2</figcaption>
+  <figcaption style="text-align:center;">Advice - Screenshot 2</figcaption>
 </figure>
 
 ### Links
